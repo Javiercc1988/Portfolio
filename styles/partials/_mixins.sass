@@ -1,0 +1,19 @@
+@mixin flex-center-center()
+    display: flex
+    justify-content: center
+    align-items: center
+
+@mixin flex-center-start()
+    display: flex
+    justify-content: center
+
+@mixin flex-params($display,$content,$items)
+    display: $display
+    justify-content: $content
+    align-items: $items
+
+
+@mixin fonts($font-size, $margin, $color-text)
+    font-size: $font-size
+    margin: $margin
+    color: $color-text

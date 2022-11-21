@@ -1,0 +1,39 @@
+@import partials/colors
+@import partials/mixins
+@import partials/fonts
+
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: "Poppins", sans-serif
+
+html,
+body
+    min-height: 100vh
+    background-color: #f7f4f4
+    color: $text-color
+    scroll-behavior: smooth
+
+body
+    display: flex
+
+.main-container
+    display: block
+    width: 100%
+
+.section
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 2px solid green
+    max-height: 100vh
+
+.footer
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 5rem
+    background-color: $red-light-color
