@@ -1,0 +1,99 @@
+
+.section-intro-container
+    max-width: 800px
+    
+    @include flex-center-center
+    flex-direction: column
+
+    img
+        border: 2px solid red
+        width: 250px
+        height: 250px
+        border-radius: 50%
+
+.text-container
+    text-align: center
+    margin-top: 2rem
+
+    & h3, h1
+        margin-bottom: 1rem
+
+    & span
+        color: $violet-color
+
+
+.buttons-container
+    margin: 1rem 0
+    text-align: center
+
+    button
+        @include box-shadow()
+
+        background-color: $violet-color
+        color: $white-color
+        border: none
+        border-radius: 12px
+        width: 150px
+        cursor: pointer
+
+        transition: all 0.25s
+
+        &:hover
+            @include box-shadow-long()
+            transform: translateY(-8px)
+
+        & i
+            font-size: 1.8rem
+            padding: .5rem 0
+
+    .socials-container
+        margin-top: 2rem
+
+        & i
+            @include box-shadow()
+
+            background-color: $violet-color
+            border-radius: 4px
+            padding: .5rem
+            font-size: 1rem
+            color: $white-color
+            transition: all 0.25s
+
+            &:hover
+                @include box-shadow-long()
+                transform: translateY(-8px)
+
+        & i:nth-child(2)
+            margin: 0 1.5rem
+
+
+
+
+/* Media Query */
+
+.section-intro-container
+    @include desktop
+        flex-direction: row
+
+
+.intro-info-container
+    .text-container
+        @include desktop
+            text-align: start
+            padding: 0 3rem
+        
+    .buttons-container
+        @include desktop
+            display: flex
+            justify-content: space-between
+            align-items: center
+            padding: 0 3rem
+
+            .socials-container
+                margin-top: 0
+
+                & i
+                    font-size: 1.5rem
+
+                & i:nth-child(3)
+                    margin-right: 4rem

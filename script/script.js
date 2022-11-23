@@ -1,12 +1,12 @@
-const sidenav = document.querySelector(".sidenav");
-const toggle = document.querySelector(".toggle");
-const btn = document.querySelector("#checkbox");
+const projectImage = document.querySelectorAll(".project-img");
+const contentBlock = document.querySelectorAll(".content-block");
 
-function changeSize() {
-    sidenav.classList.remove(".close");
-}
+projectImage.forEach(( _, i) => {
+  projectImage[i].addEventListener("click", () => {
+    contentBlock.forEach(( _, i) => {
+      contentBlock[i].classList.remove("active");
+    });
 
-btn.addEventListener("click", () => {
-    console.log("click");
-    sidenav.classList.toggle("close");
+    contentBlock[i].classList.add("active");
+  });
 });

@@ -1,3 +1,19 @@
+// Media Query
+
+@mixin tablet()
+    @media only screen and ( min-width: 768px)
+        @content
+
+@mixin desktop()
+    @media only screen and ( min-width: 992px)
+        @content
+
+@mixin large()
+    @media only screen and ( min-width: 1200px)
+        @content
+
+
+    
 @mixin flex-center-center()
     display: flex
     justify-content: center
@@ -12,8 +28,17 @@
     justify-content: $content
     align-items: $items
 
-
 @mixin fonts($font-size, $margin, $color-text)
     font-size: $font-size
     margin: $margin
     color: $color-text
+
+@mixin box-shadow
+    -webkit-box-shadow: 0px 7px 13px -6px rgba(0,0,0,0.61)
+    -moz-box-shadow: 0px 7px 13px -6px rgba(0,0,0,0.61)
+    box-shadow: 0px 7px 13px -6px rgba(0,0,0,0.61)
+
+@mixin box-shadow-long
+    -webkit-box-shadow: 0px 12px 13px -6px rgba(0,0,0,0.61)
+    -moz-box-shadow: 0px 12px 13px -6px rgba(0,0,0,0.61)
+    box-shadow: 0px 12px 13px -6px rgba(0,0,0,0.61)
