@@ -101,33 +101,69 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: auto;
+  background: #d1d1e9;
 }
 
 .accordion {
-  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
   max-width: 120em;
-  background-color: orange;
+  width: 100%;
 }
 .accordion .content-block {
-  background: red;
-  margin: 0 0 1rem;
-  padding: 1rem;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  margin: 1rem;
 }
 .accordion .content-block .project-img {
-  box-shadow: 0px 7px 13px -6px rgba(0, 0, 0, 0.61);
   width: 300px;
   border-radius: 18px;
 }
 .accordion .content-block .content {
-  background-color: pink;
-  height: 0;
-  padding: 0;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  position: absolute;
   overflow: hidden;
-  transition: all 0.5s ease;
+  padding-top: 2rem;
+  flex-direction: column;
+  text-align: center;
+  bottom: -100%;
+  width: 100%;
+  opacity: 1;
+  background: #ffffff;
+  border-radius: 18px;
+  transition: all 0.5s ease-in-out;
+}
+.accordion .content-block .content .technology-icons {
+  font-size: 1.5rem;
+  color: blue;
+}
+.accordion .content-block .content .project-icon-container {
+  display: flex;
+}
+.accordion .content-block .content .project-icon-container i {
+  box-shadow: 0px 7px 13px -6px rgba(0, 0, 0, 0.61);
+  background-color: #6246ea;
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  margin: 1rem;
+  cursor: pointer;
+  color: #fffffe;
+  transition: all 0.25s;
+}
+.accordion .content-block .content .project-icon-container i:hover {
+  box-shadow: 0px 12px 13px -6px rgba(0, 0, 0, 0.61);
+  transform: translateY(-8px);
 }
 .accordion .active .content {
-  height: 4rem;
+  opacity: 1;
+  bottom: 0;
 }
 
 * {

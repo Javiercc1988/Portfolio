@@ -1,4 +1,64 @@
 
 .section-projects
     @include flex-center-center()
-    max-height: auto
+    background: $violet-light-color
+
+.accordion
+    @include flex-center-center
+    display: flex
+    flex-wrap: wrap
+    max-width: 120em
+    width: 100%
+
+    & .content-block
+        position: relative
+        height: 100%
+        overflow: hidden
+        margin: 1rem
+
+        .project-img
+            width: 300px
+            border-radius: 18px
+
+        .content
+            @include flex-params(flex, end, center)
+
+            position: absolute
+            overflow: hidden
+            padding-top: 2rem
+
+            flex-direction: column
+            text-align: center
+            bottom: -100%
+            width: 100%
+            opacity: 1
+            background: #ffffff
+            border-radius: 18px
+            transition: all .5s ease-in-out
+
+            .technology-icons
+                font-size: 1.5rem
+                color: blue
+                
+            .project-icon-container
+                display: flex
+
+                & i
+                    @include box-shadow()
+
+                    background-color: $violet-color
+                    border-radius: 4px
+                    padding: .5rem
+                    font-size: 1.5rem
+                    margin: 1rem
+                    cursor: pointer
+                    color: $white-color
+                    transition: all 0.25s
+
+                    &:hover
+                        @include box-shadow-long()
+                        transform: translateY(-8px)
+
+    & .active .content
+        opacity: 1
+        bottom: 0
