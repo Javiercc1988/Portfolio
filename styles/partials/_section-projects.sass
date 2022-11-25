@@ -15,10 +15,12 @@
         height: 100%
         overflow: hidden
         margin: 1rem
+        cursor: pointer
 
-        .project-img
+        .card-img
             width: 300px
             border-radius: 18px
+
 
         .content
             @include flex-params(flex, end, center)
@@ -32,15 +34,24 @@
             bottom: -100%
             width: 100%
             opacity: 1
-            background: #ffffff
+            background: $white-color
             border-radius: 18px
             transition: all .5s ease-in-out
 
+            .card-title
+                margin: 1rem 0
+                color: $red-light-color
+
+            .card-subtitle
+                margin-bottom: 1rem
+
             .technology-icons
-                font-size: 1.5rem
-                color: blue
-                
-            .project-icon-container
+                font-size: 1.8rem
+
+                & i
+                    margin: 0 .2rem
+
+            .card-buttons-container
                 display: flex
 
                 & i
@@ -49,8 +60,8 @@
                     background-color: $violet-color
                     border-radius: 4px
                     padding: .5rem
-                    font-size: 1.5rem
-                    margin: 1rem
+                    font-size: 1.3rem
+                    margin: 1.5rem 1rem
                     cursor: pointer
                     color: $white-color
                     transition: all 0.25s
