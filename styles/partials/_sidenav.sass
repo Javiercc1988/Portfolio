@@ -1,0 +1,70 @@
+.sidenav
+    position: fixed
+    display: flex
+    flex-direction: column
+    height: 100%
+    width: 250px
+    padding: 0.8rem 1rem
+    transition: all 0.4s ease-in-out
+    background-color: $violet-color
+    z-index:3
+
+    &.close
+        width: 80px
+        background-color: $violet-color
+
+.menu-bar
+    margin-top: 3rem
+    height: 100%
+
+.menu-container
+    height: 100%
+
+.menu-list
+    display: flex
+    flex-direction: column
+    justify-content: center
+    height: 100%
+
+    &-item
+        height: 3.125rem
+        display: flex
+        align-items: center
+        margin-top: 1rem
+
+    &-item:nth-child(1)
+        margin-top: 0
+
+    &-item a
+        list-style: none
+        height: 100%
+        background-color: $violet-color
+        color: $white-color
+        display: flex
+        align-items: center
+        height: 100%
+        width: 100%
+        border-radius: 5px
+        text-decoration: none
+        padding: 0.6rem
+        max-width: 200px
+        transition: all 0.5s ease
+
+    &-item a:hover
+        background-color: $red-light-color
+
+    &-item a i
+        color: $white-color
+        font-size: 1.5rem
+        margin-right: 0.5rem
+        transition: all 0.3s ease
+
+.text
+    font-size: 1.2rem
+    white-space: nowrap
+    color: $white-color
+    opacity: 1
+    transition: all 0.3s ease
+
+    .sidenav.close &
+        opacity: 0
