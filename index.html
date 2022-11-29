@@ -16,13 +16,13 @@
   </head>
 
   <body>
+    <label for="checkbox" class="hamburguer-container">
+      <input type="checkbox" id="checkbox" />
+      <span class="line top-line"></span>
+      <span class="line middle-line"></span>
+      <span class="line bottom-line"></span>
+    </label>
     <nav class="sidenav close">
-      <label for="checkbox" class="hamburguer-container">
-        <input type="checkbox" id="checkbox" />
-        <span class="line top-line"></span>
-        <span class="line middle-line"></span>
-        <span class="line bottom-line"></span>
-      </label>
       <ul class="menu-list">
         <li class="menu-list-item">
           <a href="#home">
@@ -37,7 +37,7 @@
           >
         </li>
         <li class="menu-list-item">
-          <a href="#about">
+          <a href="#skills">
             <i class="fa-solid fa-house-user"></i>
             <span class="text menu-item-text">About</span></a
           >
@@ -56,7 +56,9 @@
         </li>
       </ul>
     </nav>
-    <section class="section section-welcome">
+    <main class="sections-container">
+
+    <section id="home" class="section-welcome">
       <h1>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptate
         atque corrupti enim quod quas inventore maxime reiciendis voluptatum
@@ -64,7 +66,7 @@
         qui? Beatae.
       </h1>
     </section>
-    <section class="section section-intro">
+    <section id="intro" class="section-intro">
       <div class="section-intro-container">
         <img src="" alt="" />
         <div class="intro-info-container">
@@ -88,7 +90,7 @@
         </div>
       </div>
     </section>
-    <section class="section-skills">
+    <section id="skills" class="section-skills">
       <div class="progress-container">
         <div class="circular-progress">
           <span class="progress-value"> 0% </span>
@@ -126,7 +128,7 @@
         <p class="text">Node.JS</p>
       </div>
     </section>
-    <section class="section-projects">
+    <section id="projects" class="section-purple section-projects">
       <div class="accordion">
         <div class="content-block">
           <img class="card-img" src="/img/1.jpg" alt="" />
@@ -254,7 +256,7 @@
         </div>
       </div>
     </section>
-    <section class="section section-contact">
+    <section id="contact" class="section-contact">
       <fieldset>
         <legend>Contacto</legend>
 
@@ -287,5 +289,6 @@
     </section>
 
       <i id="button-top-page" class="fa-solid fa-arrow-up"></i>
+    </main>
   </body>
 </html>

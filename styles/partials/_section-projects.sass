@@ -1,14 +1,16 @@
 
 .section-projects
-    @include flex-center-center()
-    background: $violet-light-color
+    @include flex-center-center
+    background-color: $violet-light-color
+    width: 100%
 
 .accordion
+    @include section-sizes(column, 80%, auto)
     @include flex-center-center
     display: flex
     flex-wrap: wrap
-    max-width: 120em
-    width: 100%
+    min-width: 80%
+    border: 1px solid red
 
     & .content-block
         position: relative
@@ -18,35 +20,34 @@
         cursor: pointer
 
         .card-img
-            width: 300px
+            width: 200px
+            height: 300px
             border-radius: 18px
-
 
         .content
             @include flex-params(flex, end, center)
 
             position: absolute
             overflow: hidden
-            padding-top: 2rem
-
+            height: 270px
             flex-direction: column
             text-align: center
-            bottom: -100%
+            bottom: -300px
             width: 100%
             opacity: 1
+            padding: .5rem
             background: $white-color
             border-radius: 18px
             transition: all .5s ease-in-out
 
             .card-title
-                margin: 1rem 0
                 color: $red-light-color
 
             .card-subtitle
-                margin-bottom: 1rem
-
+                font-size: .9rem
+                padding: .5rem 0
             .technology-icons
-                font-size: 1.8rem
+                font-size: 1.5rem
 
                 & i
                     margin: 0 .2rem
@@ -60,7 +61,7 @@
                     background-color: $violet-color
                     border-radius: 4px
                     padding: .5rem
-                    font-size: 1.3rem
+                    font-size: 1.1rem
                     margin: 1.5rem 1rem
                     cursor: pointer
                     color: $white-color

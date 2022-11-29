@@ -1,17 +1,23 @@
 .sidenav
-    position: fixed
-    display: flex
+    @include flex-center-center
     flex-direction: column
+
+    position: fixed
+    top: 0
+    left: 0
+
     height: 100%
-    width: 250px
+    width: 100%
+
     padding: 0.8rem 1rem
     transition: all 0.4s ease-in-out
     background-color: $violet-color
-    z-index:3
+    z-index: 2
 
     &.close
         width: 80px
         background-color: $violet-color
+        left: -200px
 
 .menu-bar
     margin-top: 3rem
@@ -21,9 +27,9 @@
     height: 100%
 
 .menu-list
-    display: flex
+    @include flex-center-center
+    position: absolute
     flex-direction: column
-    justify-content: center
     height: 100%
 
     &-item
@@ -31,6 +37,7 @@
         display: flex
         align-items: center
         margin-top: 1rem
+        animation: prueba 1s forwards
 
     &-item:nth-child(1)
         margin-top: 0
@@ -54,10 +61,14 @@
         background-color: $red-light-color
 
     &-item a i
+        display: none
         color: $white-color
         font-size: 1.5rem
         margin-right: 0.5rem
         transition: all 0.3s ease
+
+.sidenav.close .menu-list .menu-list-item
+    left: -800px
 
 .text
     font-size: 1.2rem
@@ -68,3 +79,38 @@
 
     .sidenav.close &
         opacity: 0
+
+@keyframes prueba
+    from
+        transform: translateX(-800px)
+    to
+        transform: translateX(0)
+
+/* Media Query */
+@include desktop
+    .sidenav
+        width: 200px
+        align-items: flex-start
+        &.close
+            width: 80px
+            background-color: $violet-color
+            left: 0
+
+    .menu-list
+        align-items: flex-start
+
+        &-item
+            animation: none
+
+        &-item a:hover
+            background-color: $red-light-color
+
+        &-item a
+            background-color: transparent
+
+        &-item a i
+            display: block
+            color: $white-color
+            font-size: 1.5rem
+            margin-right: 0.5rem
+            transition: all 0.3s ease

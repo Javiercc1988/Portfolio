@@ -1,15 +1,19 @@
 
-.section-intro-container
-    max-width: 800px
-    
+.section-intro
     @include flex-center-center
-    flex-direction: column
+    @include section-sizes(column, 80%, 100vh)
+    border: 1px solid red
 
-    img
-        border: 2px solid red
-        width: 250px
-        height: 250px
-        border-radius: 50%
+    .section-intro-container
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        img
+            border: 2px solid red
+            width: 250px
+            height: 250px
+            border-radius: 50%
 
 .text-container
     text-align: center
@@ -20,7 +24,6 @@
 
     & span
         color: $violet-color
-
 
 .buttons-container
     margin: 1rem 0
@@ -66,28 +69,33 @@
         & i:nth-child(2)
             margin: 0 1.5rem
 
-
-
-
 /* Media Query */
 
 .section-intro-container
-    @include desktop
-        flex-direction: row
 
+    @include tablet
+        height: 100vh
+        max-height: 100vh
+        max-width: 600px
+
+    @include desktop
+        height: 100vh
+        max-height: 100vh
+        max-width: 700px
+        flex-direction: row
 
 .intro-info-container
     .text-container
         @include desktop
             text-align: start
-            padding: 0 3rem
-        
+            padding: 0 1rem
+
     .buttons-container
         @include desktop
             display: flex
             justify-content: space-between
             align-items: center
-            padding: 0 3rem
+            padding: 0 1rem
 
             .socials-container
                 margin-top: 0

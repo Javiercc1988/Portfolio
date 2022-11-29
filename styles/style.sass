@@ -4,6 +4,7 @@
 @import partials/button-send
 @import partials/hamburguer
 @import partials/sidenav
+@import partials/section-welcome
 @import partials/section-intro
 @import partials/section-projects
 @import partials/section-contact
@@ -17,16 +18,15 @@
 
 html,
 body
-    background-color: $grey-background
-    color: $text-color
     scroll-behavior: smooth
-    height: 100vh
-    min-height: 100vh
-    max-width: 100%
 
 body
-    position: relative
-    z-index: 0
+    background-color: $grey-background
+    color: $text-color
+    height: 100vh
+
+.sections-container
+    position: absolute
 
 #button-top-page
     @include box-shadow
@@ -50,6 +50,12 @@ body
     justify-content: center
     align-items: center
     padding: 1rem
+    border: 1px solid red
+
+.sections-container
+    @include flex-center-center
+    justify-content: flex-end
+    flex-direction: column
 
     // @include tablet
     // @include desktop
