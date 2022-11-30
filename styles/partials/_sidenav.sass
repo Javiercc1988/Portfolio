@@ -87,14 +87,18 @@
         transform: translateX(0)
 
 /* Media Query */
-@include desktop
-    .sidenav
+.sidenav
+    @include desktop
         width: 200px
         align-items: flex-start
         &.close
-            width: 80px
-            background-color: $violet-color
             left: 0
+
+    @include large
+        width: 250px
+        &.close
+            left: 0
+
 
     .menu-list
         align-items: flex-start

@@ -1,8 +1,7 @@
 .section-contact
     @include flex-center-center
     @include section-sizes(column, 80%, 100vh)
-    min-width: 80%
-    border: 1px solid red
+    width: 100%
 
 fieldset
     padding: 1rem
@@ -78,6 +77,16 @@ fieldset
 
 /* Media Query */
 
+.section-contact
+    @include tablet
+        max-width: 650px
+
+    @include desktop
+        max-width: 650px
+
+    @include large
+        max-width: 1100px
+
 .form-container
     @include tablet
         display: flex
@@ -85,13 +94,14 @@ fieldset
         align-items: center
         width: 650px
         max-height: 400px
+        flex-direction: row
 
     @include desktop
-        width: 750px
+        width: 850px
         max-height: 400px
 
     @include large
-        width: 950px
+        width: 1100px
         max-height: 400px
 
     .img-form

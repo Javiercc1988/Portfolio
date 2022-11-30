@@ -1,9 +1,9 @@
 .section-skills
-    @include section-sizes(row, 80%, 100vh)
+    @include section-sizes(row, 100%, 100vh)
     @include flex-center-center
+    width: 100%
     
     flex-wrap: wrap
-    border: 1px solid red
 
     .progress-container
         display: flex
@@ -41,3 +41,15 @@
             font-weight: bold
             font-size: 1rem
             color: $violet-color
+
+/* Media Query */
+
+.section-skills
+    @include tablet
+        max-width: 650px
+
+    @include desktop
+        max-width: 850px
+
+    @include large
+        max-width: 1100px

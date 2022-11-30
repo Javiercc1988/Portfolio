@@ -1,11 +1,14 @@
 .section-welcome
     @include flex-center-center
     @include section-sizes(column, 80%, 100vh)
-    border: 1px solid red
 /* Media Query */
 
-@include tablet
-    .section-welcome
-        justify-content: center
-        max-width: 700px
-        height: 100vh
+.section-welcome
+    @include tablet
+        max-width: 650px
+
+    @include desktop
+        max-width: 850px
+
+    @include large
+        max-width: 1100px
