@@ -3,7 +3,7 @@
 const circularProgress = document.querySelectorAll(".circular-progress");
 const progressValue = document.querySelectorAll(".progress-value");
 let progressStartValue = [0,0,0,0,0,0,0];
-let progressEndValue = [80,70,65,65,65,50];
+let progressEndValue = [85,75,70,70,70,60];
 let speed = 20;
 
 function prueba(i){

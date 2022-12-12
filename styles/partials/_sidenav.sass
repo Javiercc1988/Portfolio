@@ -44,13 +44,10 @@
 
     &-item a
         list-style: none
-        height: 100%
         background-color: $violet-color
         color: $white-color
         display: flex
         align-items: center
-        height: 100%
-        width: 100%
         border-radius: 5px
         text-decoration: none
         padding: 0.6rem
@@ -63,15 +60,16 @@
     &-item a i
         display: none
         color: $white-color
-        font-size: 1.5rem
+        font-size: 1.2rem
         margin-right: 0.5rem
+        width: 30px
         transition: all 0.3s ease
 
 .sidenav.close .menu-list .menu-list-item
     left: -800px
 
 .text
-    font-size: 1.2rem
+    font-size: 1.1rem
     white-space: nowrap
     color: $white-color
     opacity: 1
@@ -94,27 +92,27 @@
         &.close
             left: 0
 
+        .menu-list
+            align-items: flex-start
+
+            &-item
+                animation: none
+
+            &-item a:hover
+                background-color: $red-light-color
+
+            &-item a
+                background-color: transparent
+
+            &-item a i
+                display: block
+                text-align: center
+
+            &-item a:hover .text
+                opacity: 1
+                transition: all 0.3s ease
+
     @include large
         width: 250px
         &.close
             left: 0
-
-
-    .menu-list
-        align-items: flex-start
-
-        &-item
-            animation: none
-
-        &-item a:hover
-            background-color: $red-light-color
-
-        &-item a
-            background-color: transparent
-
-        &-item a i
-            display: block
-            color: $white-color
-            font-size: 1.5rem
-            margin-right: 0.5rem
-            transition: all 0.3s ease
