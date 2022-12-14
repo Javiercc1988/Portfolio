@@ -8,8 +8,15 @@ const hamburguerButton = document.querySelector("#checkbox");
 const menuButton = document.querySelectorAll(".menu-list-item");
 
 // Cards
-const cardImage = document.querySelectorAll(".card-img");
-const contentBlock = document.querySelectorAll(".content-block");
+const cardImages = document.querySelectorAll(".card__image");
+const cardImagesArr = [
+  "../assets/img/web1-inmobiliaria.jpg",
+  "../assets/img/web2-cafe.jpg",
+  "../assets/img/web3-notas.jpg",
+  "../assets/img/web5-inmobiliaria.jpg",
+  "../assets/img/web4-buses.jpg",
+  "../assets/img/web6-beauty-center.jpg"
+];
 
 // Night / Day Mode
 const night = document.querySelector(".night-mode");
@@ -40,14 +47,13 @@ hamburguerButton.addEventListener("click", () => {
 night.addEventListener("click", () => {
   if (night.classList.contains("fa-moon")) {
     night.classList.replace("fa-moon", "fa-lightbulb");
-    night.style.color = "#f7f4f4"
+    night.style.color = "#f7f4f4";
   } else {
     night.classList.replace("fa-lightbulb", "fa-moon");
-    night.style.color = "#6246ea"
+    night.style.color = "#6246ea";
   }
   body.classList.toggle("dark");
 });
-
 
 menuButton.forEach((button) => {
   button.addEventListener("click", () => {
@@ -56,29 +62,13 @@ menuButton.forEach((button) => {
     hamburguerButton.checked === true
       ? (hamburguerButton.checked = false)
       : hamburguerButton.checked;
-    console.log("dasdasda", hamburguerButton.checked);
   });
 });
 
 // Cards
-cardImage.forEach((_, i) => {
-  cardImage[i].addEventListener("click", () => {
-    contentBlock.forEach((_, i) => {
-      contentBlock[i].classList.remove("active");
-    });
-
-    contentBlock[i].classList.add("active");
-  });
+cardImages.forEach((card, index) => {
+  card.style.backgroundImage = `url(${cardImagesArr[index]})`;
 });
-
-const gifts = ['cat', 'game', 'socks']
-const myArr = []
-function wrapping(gifts) {
-  return gifts.map( element => {
-    const string = "*".repeat(element.length + 2);
-    return `${string}\n*${element}*\n${string}`
-  })
-}
 
 // Execution
 scrollTopButton();

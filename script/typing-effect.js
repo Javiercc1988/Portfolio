@@ -1,5 +1,6 @@
 const typingContainer = document.querySelector("#typingContainer");
 const typingContainer2 = document.querySelector("#idd");
+const homeSection = document.querySelector("#home");
 
 const phrases = ["JavaScript", "Angular", "Node.JS", "Python", "Bootstrap", "SASS"];
 
@@ -8,60 +9,22 @@ var txt = "Te doy la bienvenida a mi sitio web, soy desarrollador con tecnologí
 var ee = 50;
 
 function typeWriter() {
+  
   if (x < txt.length) {
     typingContainer2.innerHTML += txt.charAt(x);
     x++;
     setTimeout(typeWriter, ee);
   } else {
-    typing();
-  }
+    setTimeout(() => {
+      typingContainer.style.textAlign = "center"
+      phrases.forEach((value, index) =>
+      setTimeout(() => typingContainer.innerHTML += `${value}<br>`, index * 1000)
+      )
+      
+    }, 1000);
+    }
 }
 
-let i = 0;
-let j = 0;
-let currentPhrase = [];
-let isDeleting = false;
-let isEnd = false;
 
-function typing() {
-  typingContainer.classList.add("parpadeo");
-
-  isEnd = false;
-  typingContainer.innerHTML = currentPhrase.join("");
-
-  if (i < phrases.length) {
-    if (!isDeleting && j <= phrases[i].length) {
-      currentPhrase.push(phrases[i][j]);
-      j++;
-    }
-
-    if (isDeleting && j <= phrases[i].length) {
-      setTimeout(() => {
-        currentPhrase.pop(phrases[i][j]);
-        j--;
-        
-      }, 100);
-    }
-
-    if (j == phrases[i].length) {
-
-      isEnd = true;
-      isDeleting = true;
-    }
-
-    if (isDeleting && j === 0) {
-      currentPhrase = [];
-      isDeleting = false;
-      i++;
-      if (i === phrases.length) {
-        i = 0;
-      }
-    }
-  }
-
-  let clear = isDeleting ? 50 : 200
-
-  setTimeout(typing, clear);
-}
 
 typeWriter();

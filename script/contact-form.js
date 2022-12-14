@@ -15,43 +15,43 @@ const buttonIconCheck = document.querySelector("#button-icon-check");
 // Event Listeners
 button.addEventListener("click", () => {});
 
-// RegExp 
+// RegExp
 const emailRegex =
   /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
 
-
 function formIsValid() {
-
-  if(inputName.value === "" || !emailRegex.test(inputEmail.value) || inputEmail.value === "" || inputMessage.value === "" ){
-
+  if (
+    inputName.value === "" ||
+    !emailRegex.test(inputEmail.value) ||
+    inputEmail.value === "" ||
+    inputMessage.value === ""
+  ) {
     if (inputName.value === "") {
       inputName.style.border = "2px solid #e45858";
       setTimeout(() => {
         inputName.style.border = "2px solid #d1d1e9";
       }, 2500);
     }
-    
+
     if (emailRegex.test(inputEmail.value) || inputEmail.value === "") {
       inputEmail.style.border = "2px solid #e45858";
       setTimeout(() => {
         inputEmail.style.border = "2px solid #d1d1e9";
       }, 2500);
     }
-    
+
     if (inputMessage.value === "") {
       inputMessage.style.border = "2px solid #e45858";
       setTimeout(() => {
         inputMessage.style.border = "2px solid #d1d1e9";
       }, 2500);
     }
-    
-    return false
+
+    return false;
   }
 
-  return true
-
+  return true;
 }
-
 
 function formStyles() {
   input.forEach((element, i) => {
@@ -70,7 +70,6 @@ function formStyles() {
     });
   });
 }
-
 
 function sendButtonStyles() {
   buttonIconSend.classList.toggle("clicked");
@@ -92,7 +91,6 @@ function sendButtonStyles() {
   }, 4000);
 }
 
-
 // Envío de email con datos del formulario.
 document.getElementById("form").addEventListener("submit", function (event) {
   event.preventDefault();
@@ -101,15 +99,17 @@ document.getElementById("form").addEventListener("submit", function (event) {
     const serviceID = "default_service";
     const templateID = "template_ju5f1vf";
     sendButtonStyles();
-    
+
     emailjs.sendForm(serviceID, templateID, this).then(
       () => {
+        inputName.value = null;
+        inputEmail.value = null;
+        inputMessage.value = null;
       },
       (err) => {}
     );
   }
 });
-
 
 // Run
 formStyles();

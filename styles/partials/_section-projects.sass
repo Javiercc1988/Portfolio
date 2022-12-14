@@ -4,8 +4,14 @@
     background-color: $violet-light-color
     width: 100%
     flex-wrap: wrap
-    justify-content: space-evenly
     min-height: 100vh
+
+.card-container
+    display: flex
+    justify-content: center
+    flex-basis: 28%
+    margin: 1rem
+
 
 .card
     display: flex
@@ -17,11 +23,11 @@
     max-width: 300px
     border-radius: 1.1rem
     margin: 1rem 0
+    
 
     &__image
-        background-image: url("../img/web1-buses.jpg")
         background-position: center center
-        background-size: 450px
+        background-size: 380px
         overflow: hidden
         border-radius: 1.1rem 1.1rem 0 0
 
@@ -47,18 +53,40 @@
         color: $text-color
         font-size: .8rem
         padding-bottom: 1.5rem
+        min-height: 125px
 
     &__buttons
         display: flex
         justify-content: flex-end
         align-items: flex-end
         flex-grow: 1
-        i
-            @include link-button
-            font-size: 1.3rem
-            min-width: 1.3rem
-            width: 2.5rem
-            text-align: center
+        cursor: pointer
+    
+        a
+            position: relative
+            min-width: 100px
+            border-radius: 12px
+            background-color: $violet-color
+            margin-right: .5rem
+            top: 0
+            transition: .3s all ease-in-out
+
+            &:hover
+                @include box-shadow
+                top: -5px
+                
+            span
+                position: relative
+                top: -3px
+                font-size: .8rem
+                margin-left: .5rem
+                font-weight: 500
+            i
+                @include link-button
+                font-size: 1.3rem
+                min-width: 1.3rem
+                width: 2.5rem
+                text-align: center
 
 /* Media Query */
 
@@ -68,3 +96,4 @@
     @include desktop
 
     @include large
+
